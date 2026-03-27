@@ -13,7 +13,7 @@ const apiClient = axios.create({
 
 interface FetchNotesParams {
     search?: string;
-    tag?: string;
+    tag?: NoteTag;
     page?: number;
     perPage?: number;
     sortBy?: string;

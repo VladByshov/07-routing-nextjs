@@ -9,16 +9,16 @@ export const metadata: Metadata = {
     description: "NoteHub site",
 };
 
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+export default function RootLayout({children, modal}: Readonly<{
     children: React.ReactNode;
+    modal: React.ReactNode;
 }>) {
     return (
         <html lang="en">
         <body>
         <TanStackProvider>
             <Header/>
+            {modal}
             {children}
             <Footer/>
         </TanStackProvider>
