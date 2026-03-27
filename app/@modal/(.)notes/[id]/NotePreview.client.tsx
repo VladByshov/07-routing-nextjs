@@ -18,7 +18,7 @@ export default function NotePreviewClient(){
         isLoading,
         isError
     } = useQuery({
-        queryKey:["notes", id],
+        queryKey:["note", id],
         queryFn: () => fetchNoteById(id),
         refetchOnMount: false,
     });
@@ -29,8 +29,6 @@ export default function NotePreviewClient(){
     return(
         <>
             <Modal onClose={onClose}>
-                {isLoading && <p>Loading, please wait...</p>}
-                {(isError || !data) && <p>Something went wrong.</p>}
                 <div className={css.container}>
                     <div className={css.item}>
                         <div className={css.header}>
